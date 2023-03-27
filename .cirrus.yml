@@ -9,6 +9,8 @@ env:
     KT_LINK: https://github.com/OnePlus-sm6375-devices/android_kernel_oneplus_sm6375.git
     PLATFORM: sm6375
     KT_PATH: kernel/$OEM/$PLATFORM
+    HW_LINK: https://github.com/PixelExperience/hardware_oneplus.git
+    HW_PATH: hardware/$OEM
     TARGET: bacon
     EXTRA_CMD: export SKIP_ABI_CHECKS=true
     LUNCH_COMBO: aosp_CPH2381-userdebug
@@ -38,7 +40,7 @@ task:
       - repo init --depth=1 -u $MANIFEST
       - repo sync -j4 --force-sync --no-tags --no-clone-bundle
       - git clone $DT_LINK $DT_PATH
-      
+      - git clone $HW_LINK $HW_PATH
       - git clone $KT_LINK $KT_PATH
       - echo "============================"
       - echo "Syncing Complete!"
@@ -53,7 +55,7 @@ task:
       - export USE_CCACHE=1
       - export CCACHE_EXEC=/usr/bin/ccache
       - ccache -M 50G
-      - rm -rf hardware/qcom-caf/sm8350
+      
       - . build/envsetup.sh
       - lunch "$LUNCH_COMBO"
       - mka -j31 $TARGET
