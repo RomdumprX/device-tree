@@ -1,20 +1,3 @@
-env:
-    MANIFEST: https://github.com/PixelExperience/manifest -b thirteen
-    DEVICE: CPH2381
-    OEM: oneplus
-    DT_LINK: https://github.com/ajaysinghsati/device_oneplus_CPH2381.git
-    DT_PATH: device/$OEM/$DEVICE
-    VT_LINK: 
-    VT_PATH: 
-    KT_LINK: https://github.com/OnePlus-sm6375-devices/android_kernel_oneplus_sm6375.git
-    PLATFORM: sm6375
-    KT_PATH: kernel/$OEM/$PLATFORM
-    HW_LINK: https://github.com/PixelExperience/hardware_oneplus.git
-    HW_PATH: hardware/$OEM
-    TARGET: bacon
-    EXTRA_CMD: export SKIP_ABI_CHECKS=true
-    LUNCH_COMBO: aosp_CPH2381-userdebug
-    OUTPUT: PixelExperience*.zip
 
 task:
   name: "Setting Up, Syncing, Building and Uploading..."
