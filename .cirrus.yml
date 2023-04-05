@@ -1,4 +1,15 @@
+task:
+  name: "Firmware Dump by DumprX"
+  only_if: $CIRRUS_REPO_OWNER == 'sungsong85'
+  
+  
+  timeout_in: 120m
+  container:
+      image: ghcr.io/sushrut1101/docker:arch
 
+      privileged: true
+      cpu: 4
+      memory: 16G
 
 
   Storage-Checker_script:
